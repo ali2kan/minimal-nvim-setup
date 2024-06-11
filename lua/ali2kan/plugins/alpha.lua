@@ -6,17 +6,63 @@ return {
     local dashboard = require("alpha.themes.dashboard")
     local fortune = require("alpha.fortune")
 
-    -- Set header
-    dashboard.section.header.val = {
+    -- Define and set highlight groups for each logo line
+    vim.api.nvim_set_hl(0, "AlphaHeaderDarkGray", { fg = "#5c6370" }) -- Dark Gray
+    vim.api.nvim_set_hl(0, "AlphaHeaderLightGray", { fg = "#abb2bf" }) -- Light Gray
+    vim.api.nvim_set_hl(0, "AlphaHeaderWhite", { fg = "#ffffff" }) -- White
+    vim.api.nvim_set_hl(0, "AlphaHeaderOrange", { fg = "#CC5500" }) -- Orange
 
-      "                                                     ",
-      " ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗ ",
-      " ╚════██╗██║ ██╔╝██╔══██╗████╗  ██║██║   ██║██║████╗ ████║ ",
-      "  █████╔╝█████╔╝ ███████║██╔██╗ ██║██║   ██║██║██╔████╔██║ ",
-      " ██╔═══╝ ██╔═██╗ ██╔══██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-      " ███████╗██║  ██╗██║  ██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-      " ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-      "                                                     ",
+    -- Set header with the highlight group
+    dashboard.section.header.type = "group"
+    dashboard.section.header.val = {
+      {
+        type = "text",
+        val = "                                                     ",
+        opts = { hl = "AlphaHeaderDarkGray", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = " ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗ ",
+        opts = { hl = "AlphaHeaderOrange", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = " ╚════██╗██║ ██╔╝██╔══██╗████╗  ██║██║   ██║██║████╗ ████║ ",
+        opts = { hl = "AlphaHeaderLightGray", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = "  █████╔╝█████╔╝ ███████║██╔██╗ ██║██║   ██║██║██╔████╔██║ ",
+        opts = { hl = "AlphaHeaderWhite", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = " ██╔═══╝ ██╔═██╗ ██╔══██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+        opts = { hl = "AlphaHeaderDarkGray", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = " ███████╗██║  ██╗██║  ██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+        opts = { hl = "AlphaHeaderOrange", shrink_margin = false, position = "center" },
+      },
+      {
+        type = "text",
+        val = " ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+        opts = { hl = "AlphaHeaderLightGray", shrink_margin = false, position = "center" },
+      },
+    }
+
+    -- Set header
+    -- dashboard.section.header.val = {
+
+    --   "                                                     ",
+    --   " ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗ ",
+    --   " ╚════██╗██║ ██╔╝██╔══██╗████╗  ██║██║   ██║██║████╗ ████║ ",
+    --   "  █████╔╝█████╔╝ ███████║██╔██╗ ██║██║   ██║██║██╔████╔██║ ",
+    --   " ██╔═══╝ ██╔═██╗ ██╔══██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+    --   " ███████╗██║  ██╗██║  ██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+    --   " ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+    --   "                                                     ",
 
       -- "                                                     ",
       -- "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
@@ -26,7 +72,7 @@ return {
       -- "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
       -- "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
       -- "                                                     ",
-    }
+    -- }
 
     -- Set menu
     dashboard.section.buttons.val = {
