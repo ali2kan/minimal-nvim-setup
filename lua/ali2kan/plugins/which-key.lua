@@ -6,7 +6,7 @@ return {
     vim.o.timeoutlen = 500
   end,
   opts = {
-    window = {
+    win = {
       border = "single", -- none, single, double, shadow
       color = "red",
       position = "bottom", -- bottom, top
